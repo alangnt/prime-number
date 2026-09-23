@@ -8,7 +8,7 @@ bool is_prime_number(int number) {
   }
 
   // we're gonna define it here
-  for (int i = 1; i < number; i++) {
+  for (int i = 1; i <= number; i++) {
     if (number % i == 0) {
       factors++;
     }
@@ -18,7 +18,7 @@ bool is_prime_number(int number) {
 }
 
 int main() {
-  for (int i = 1; i < 100; i++) {
+  for (int i = 1; i <= 100; i++) {
     bool is_prime = is_prime_number(i);
 
     if (is_prime) {
