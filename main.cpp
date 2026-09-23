@@ -18,14 +18,14 @@ bool is_prime_number(int number) {
 }
 
 int main() {
-  for (int i = 1; i <= 100; i++) {
-    bool is_prime = is_prime_number(i);
+  int value = 2;
 
-    if (is_prime) {
-      std::cout << i << " is Prime." << std::endl;
-    } else {
-      std::cout << i << " is not Prime." << std::endl;
-    }
+  bool is_prime = is_prime_number(value);
+
+  if (is_prime) {
+    std::cout << value << " is Prime." << std::endl;
+  } else {
+    std::cout << value << " is not Prime." << std::endl;
   }
 
   return 0;
