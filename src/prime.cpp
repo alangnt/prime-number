@@ -1,6 +1,10 @@
 bool is_prime_number(int number) {
   int factors = 0;
 
+  if (number <= 0) {
+    return false;
+  }
+
   if (number == 1) {
     return true;
   }
