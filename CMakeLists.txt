@@ -7,6 +7,6 @@ add_library(PrimeNumberLib
   src/Prime.h
 )
 
-add_executable(PrimeNumbermain.cpp)
+add_executable(PrimeNumber main.cpp)
 
 target_link_libraries(PrimeNumber PRIVATE PrimeNumberLib)
