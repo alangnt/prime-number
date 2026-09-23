@@ -1,12 +1,12 @@
-# 1. Specify the minimum version of CMake required
 cmake_minimum_required(VERSION 3.20)
 
-# 2. Set the project name and programming language
-project(PrimeNumber CXX)
+project(PrimeNumberProject CXX)
 
-# 3. Create the executable target and list its source files
-add_executable(PrimeNumber
-  main.cpp
+add_library(PrimeNumberLib
   src/Prime.cpp
   src/Prime.h
 )
+
+add_executable(PrimeNumbermain.cpp)
+
+target_link_libraries(PrimeNumber PRIVATE PrimeNumberLib)
