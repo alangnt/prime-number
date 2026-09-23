@@ -9,7 +9,6 @@ bool is_prime_number(int number) {
     return true;
   }
 
-  // we're gonna define it here
   for (int i = 1; i <= number; i++) {
     if (number % i == 0) {
       factors++;
