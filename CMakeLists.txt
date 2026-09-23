@@ -5,4 +5,8 @@ cmake_minimum_required(VERSION 3.20)
 project(PrimeNumber CXX)
 
 # 3. Create the executable target and list its source files
-add_executable(PrimeNumber main.cpp)
+add_executable(PrimeNumber
+  main.cpp
+  src/Prime.cpp
+  src/Prime.h
+)
