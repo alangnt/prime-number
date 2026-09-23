@@ -1,4 +1,4 @@
-#include "src/Prime.h"
+#include "Prime.h"
 #include <iostream>
 
 int main() {

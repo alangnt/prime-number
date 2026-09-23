@@ -10,7 +10,7 @@ add_library(PrimeNumberLib
   src/Prime.h
 )
 
-target_link_directories(PrimeNumberLib PUBLIC src)
+target_include_directories(PrimeNumberLib PUBLIC src)
 
 add_executable(PrimeNumber main.cpp)
 
