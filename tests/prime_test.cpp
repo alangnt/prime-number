@@ -25,6 +25,10 @@ TEST(PrimeTest, NegativeNumberIsNotPrime) {
   EXPECT_FALSE(is_prime_number(-13));
 }
 
+TEST(PrimeTest, OneIsNotPrime) {
+  EXPECT_FALSE(is_prime_number(1));
+}
+
 TEST(PrimeTest, ZeroIsNotPrime) {
   EXPECT_FALSE(is_prime_number(0));
 }
