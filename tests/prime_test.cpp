@@ -12,3 +12,7 @@ TEST(PrimeTest, FourIsNotPrime) {
 TEST(PrimeTest, SeventeenIsPrime) {
   EXPECT_TRUE(is_prime_number(17));
 }
+
+TEST(PrimeTest, NegativeNumberIsNotPrime) {
+  EXPECT_FALSE(is_prime_number(-2));
+}
