@@ -14,6 +14,7 @@ bool is_prime_number(int number) {
       factors++;
     }
 
+    // no need to go further if already more than 2
     if (factors > 2) {
       break;
     }
