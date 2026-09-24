@@ -1,29 +1,34 @@
 #include "prime.h"
 #include <gtest/gtest.h>
 
-TEST(PrimeTest, IsPrime) {
-  EXPECT_TRUE(is_prime_number(2));
-  EXPECT_TRUE(is_prime_number(3));
-  EXPECT_TRUE(is_prime_number(5));
-  EXPECT_TRUE(is_prime_number(7));
-  EXPECT_TRUE(is_prime_number(13));
+class IsPrimeParamTest    : public testing::TestWithParam<int> {};
+class IsNotPrimeParamTest : public testing::TestWithParam<int> {};
+
+TEST_P(IsPrimeParamTest, ValidatesTrue) {
+    EXPECT_TRUE(is_prime_number(GetParam()));
 }
 
-TEST(PrimeTest, IsNotPrime) {
-  EXPECT_FALSE(is_prime_number(4));
-  EXPECT_FALSE(is_prime_number(6));
-  EXPECT_FALSE(is_prime_number(9));
-  EXPECT_FALSE(is_prime_number(15));
-  EXPECT_FALSE(is_prime_number(20));
+TEST_P(IsNotPrimeParamTest, ValidatesFalse) {
+    EXPECT_FALSE(is_prime_number(GetParam()));
 }
 
-TEST(PrimeTest, NegativeNumberIsNotPrime) {
-  EXPECT_FALSE(is_prime_number(-1));
-  EXPECT_FALSE(is_prime_number(-3));
-  EXPECT_FALSE(is_prime_number(-5));
-  EXPECT_FALSE(is_prime_number(-7));
-  EXPECT_FALSE(is_prime_number(-13));
-}
+INSTANTIATE_TEST_SUITE_P(
+    Primes,
+    IsPrimeParamTest,
+    testing::Values(2, 3, 5, 7, 13)
+);
+
+INSTANTIATE_TEST_SUITE_P(
+    Composites,
+    IsNotPrimeParamTest,
+    testing::Values(4, 6, 9, 15, 20)
+);
+
+INSTANTIATE_TEST_SUITE_P(
+    Negatives,
+    IsNotPrimeParamTest,
+    testing::Values(-1, -3, -5, -7, -13)
+);
 
 TEST(PrimeTest, OneIsNotPrime) {
   EXPECT_FALSE(is_prime_number(1));
