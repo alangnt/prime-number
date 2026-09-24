@@ -6,8 +6,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_library(PrimeNumberLib
-  src/Prime.cpp
-  src/Prime.h
+  src/prime.cpp
+  src/prime.h
 )
 
 target_include_directories(PrimeNumberLib PUBLIC src)
