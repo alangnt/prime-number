@@ -13,6 +13,10 @@ bool is_prime_number(int number) {
     if (number % i == 0) {
       factors++;
     }
+
+    if (factors > 2) {
+      break;
+    }
   }
 
   return factors == 2;
